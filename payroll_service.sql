@@ -20,3 +20,6 @@ values (101, 'Atharva', 50000, '2021-06-04'),
        (103, 'Piyush', 45000, '2021-04-02'),
        (104, 'Snehal', 60000, '2021-03-01'),
        (105, 'Sakshi', 55000, '2021-02-28');
+
+#UC4
+SELECT * FROM employee_payroll;
