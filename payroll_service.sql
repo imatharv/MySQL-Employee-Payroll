@@ -27,3 +27,7 @@ SELECT * FROM employee_payroll;
 #UC5
 SELECT salary FROM employee_payroll WHERE name = 'Gaurav'; #Return 55000
 SELECT name FROM employee_payroll WHERE start_date BETWEEN CAST('2021-05-01'AS DATE) AND DATE(NOW()); #Return Atharva, Gaurav
+
+#UC6
+ALTER TABLE employee_payroll ADD gender char(1) NOT NULL;
+UPDATE employee_payroll SET gender = 'm';
