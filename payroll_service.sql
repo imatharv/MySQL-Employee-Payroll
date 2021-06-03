@@ -23,3 +23,7 @@ values (101, 'Atharva', 50000, '2021-06-04'),
 
 #UC4
 SELECT * FROM employee_payroll;
+
+#UC5
+SELECT salary FROM employee_payroll WHERE name = 'Gaurav'; #Return 55000
+SELECT name FROM employee_payroll WHERE start_date BETWEEN CAST('2021-05-01'AS DATE) AND DATE(NOW()); #Return Atharva, Gaurav
