@@ -31,3 +31,10 @@ SELECT name FROM employee_payroll WHERE start_date BETWEEN CAST('2021-05-01'AS D
 #UC6
 ALTER TABLE employee_payroll ADD gender char(1) NOT NULL;
 UPDATE employee_payroll SET gender = 'm';
+
+#UC7
+SELECT SUM(salary) FROM employee_payroll WHERE gender = 'm' GROUP BY gender; #Returns 150000
+SELECT AVG(salary) FROM employee_payroll WHERE gender = 'f' GROUP BY gender; #Returns 57500.0000
+SELECT COUNT(name) FROM employee_payroll WHERE gender = 'm' GROUP BY gender; #Returns 3
+SELECT MIN(salary) FROM employee_payroll; #Returns 45000
+SELECT MAX(salary) FROM employee_payroll; #Returns 60000
