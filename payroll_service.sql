@@ -55,3 +55,13 @@ UPDATE employee_payroll SET department = 'HR' WHERE name = 'Snehal';
 UPDATE employee_payroll SET department = 'Prodcution' WHERE name = 'Piyush';
 UPDATE employee_payroll SET department = 'IT' WHERE name = 'Sakshi';
 
+#UC9
+ALTER TABLE employee_payroll ADD basic_pay FLOAT NOT NULL;
+ALTER TABLE employee_payroll ADD deduction FLOAT NOT NULL;
+ALTER TABLE employee_payroll ADD taxable FLOAT NOT NULL;
+ALTER TABLE employee_payroll ADD incometax FLOAT NOT NULL;
+ALTER TABLE employee_payroll ADD net_pay FLOAT NOT NULL;
+DESCRIBE employee_payroll;
+DROP TABLE employee_payroll;
+
+
