@@ -94,5 +94,19 @@ VALUES (101,'Atharva','M','9665654666','Jalgaon MH'),
        (103,'Snehal','F','8408095441','Ahmadnagar MH'),
        (104,'Sakshi','F','9552495055','Nashik MH');
 
+#UC11
+CREATE TABLE employee_department (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    EmployeeId INT NOT NULL,
+    Department VARCHAR(50) NOT NULL,
+    FOREIGN KEY (EmployeeId) REFERENCES employee_details (EmployeeID)
+);
+INSERT INTO employee_department (ID, EmployeeId, Department)
+VALUES (1,101,'HR'),
+       (2,102, 'IT'),
+       (3,103,'QA'),
+       (4,104,'DBA');
+
+
 
 
