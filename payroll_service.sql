@@ -64,4 +64,35 @@ ALTER TABLE employee_payroll ADD net_pay FLOAT NOT NULL;
 DESCRIBE employee_payroll;
 DROP TABLE employee_payroll;
 
+#UC10 Refactoring all..
+CREATE TABLE employee_payroll (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Basic FLOAT NOT NULL,
+    Deduction FLOAT NOT NULL,
+    Taxable FLOAT NOT NULL,
+    Incometax FLOAT NOT NULL,
+    Net FLOAT NOT NULL,
+    Started DATE NOT NULL
+);
+INSERT INTO employee_payroll (ID, Basic, Deduction, Taxable, Incometax, Net, Started)
+VALUES (101, 30000.0, 2000.0, 28000.0, 1000.0, 27000.0, '2021-06-05'),
+       (102, 35000.0, 2000.0, 33000.0, 1000.0, 32000.0, '2021-06-04'),
+       (103, 40000.0, 2500.0, 37500.0, 1500.0, 36000.0, '2021-06-03'),
+       (104, 25000.0, 1500.0, 23500.0, 500.0, 23000.0, '2021-06-02');
+
+CREATE TABLE Employee_Details (
+    EmployeeID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Gender CHAR NOT NULL,
+    Contact INT NOT NULL,
+    Address VARCHAR(50) NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES employee_payroll (ID)
+);
+INSERT INTO Employee_Details (EmployeeID, Name, Gender, Contact, Address)
+VALUES (101,'Atharva','M','9665654666','Jalgaon MH'),
+       (102,'Kaustubh','M','8446633397','Pune MH'),
+       (103,'Snehal','F','8408095441','Ahmadnagar MH'),
+       (104,'Sakshi','F','9552495055','Nashik MH');
+
+
 
